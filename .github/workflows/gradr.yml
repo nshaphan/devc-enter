@@ -28,7 +28,7 @@ jobs:
     - name: Audit Pull-Request
       uses: actions/checkout@v2
       with: 
-        repository: chalu/devc-frontend-audits
+        repository: chalu/devc-frontend-audits@v1
         path: audits
       run: jest
         env:
