@@ -29,7 +29,7 @@ jobs:
     - name: Prepare Audits
       uses: actions/checkout@v2
       with: 
-        repository: chalu/devc-frontend-audits@v1
+        repository: chalu/devc-frontend-audits/releases/tag/v1
         path: audits
     - name: Run Audits
       run: jest
