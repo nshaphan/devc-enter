@@ -24,7 +24,7 @@ jobs:
     - name: Install Deps & Build 
       run: |
         npm install
-        npm install jest@25.1.0
+        npm install -g jest-cli
         npm run build --if-present
     - name: Prepare Audits
       uses: actions/checkout@v2
