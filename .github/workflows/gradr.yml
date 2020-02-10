@@ -12,16 +12,24 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x]
+        node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - name: Install Dependencies & Run Build 
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build --if-present
-    - run: npm test
-      env:
-        CI: true
+      run: |
+        npm install
+        npm install jest@25.1.0
+        npm run build --if-present
+    - name: Audit Pull-Request
+      uses: actions/checkout@v2
+      with: 
+        repository: chalu/devc-frontend-audits
+        path: audits
+      run: jest
+        env:
+          CI: true
