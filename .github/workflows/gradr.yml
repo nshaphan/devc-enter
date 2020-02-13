@@ -1,4 +1,4 @@
-name: Gradr Code Review
+name: Gradr
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Code Audit
+    name: code audit
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,7 +31,7 @@ jobs:
       with: 
         repository: chalu/devc-frontend-audits
         path: audits
-    - name: Check Code
+    - name: Run Audits
       run: jest
       env:
         CI: true
