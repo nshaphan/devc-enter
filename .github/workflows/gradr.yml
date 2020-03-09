@@ -1,4 +1,4 @@
-name: Gradr Code Review
+name: Gradr
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-
+    name: code audit
     runs-on: ubuntu-latest
 
     strategy:
