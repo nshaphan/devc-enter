@@ -28,5 +28,5 @@ jobs:
     - name: Run Audits
       run: yarn test
     - name: Report Audit Stats
-        uses: ./.github/actions/out
-        if: success()
+      uses: ./.github/actions/out
+      if: success()
