@@ -1,6 +1,5 @@
-![Gradr Code Review](https://github.com/chalu/devc-enter/workflows/Gradr%20Code%20Review/badge.svg)
+# #BuildForSDG Innovation Program
 
-# devc-enter
-Demonstrate eligibility for the 2020 Facebook Developer Circles innovation program by buulding and merging 2 or more featured in [the frontend project roadmap](https://www.pivotaltracker.com/n/projects/2354595).
+Demonstrate eligibility for the 2020 Facebook Developer Circles innovation program by building any 3 of the listed 5 features. See detailed instructions below.
 
-This assessment and the innovation program is powered by Andela.
+This assessment and the innovation program is powered by Andela and supported by Facebook Developer Circles

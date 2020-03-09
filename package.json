@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:chalu/devc-enter.git",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --json --outputFile=__tests__/js-test-report.json"
+  }
 }
