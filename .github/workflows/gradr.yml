@@ -18,18 +18,6 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
 
-    - name: Cache Deps
-      uses: actions/cache@v1
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ~/.npm 
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
     - name: Prepare To Install
       uses: actions/setup-node@v1
       with:
@@ -38,7 +26,7 @@ jobs:
     - name: Install Deps
       run: |
         yarn install
-        yarn add jest
+        yarn add jest axios
 
     - name: Run Audits
       run: yarn ft-1
@@ -68,7 +56,7 @@ jobs:
     - name: Install Deps
       run: |
         yarn install
-        yarn add jest
+        yarn add jest axios
         
     - name: Run Audits
       run: yarn ft-2
@@ -98,7 +86,7 @@ jobs:
     - name: Install Deps
       run: |
         yarn install
-        yarn add jest
+        yarn add jest axios
         
     - name: Run Audits
       run: yarn ft-3
