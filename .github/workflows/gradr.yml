@@ -17,21 +17,16 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-    - name: Prepare To Install & Build 
+    - name: Prepare To Install
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install Deps & Build 
+    - name: Install Deps
       run: |
-        npm install
-        npm install jest@25.1.0
-        npm run build --if-present
-    - name: Prepare Audits
-      uses: actions/checkout@v2
-      with: 
-        repository: chalu/devc-frontend-audits@v1
-        path: audits
+        yarn install
+        yarn add axios jest
     - name: Run Audits
-      run: jest
-      env:
-        CI: true
+      run: yarn test
+    - name: Report Audit Stats
+        uses: ./.github/actions/out
+        if: success()
