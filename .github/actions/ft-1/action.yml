@@ -1,39 +1,5 @@
-const core = require('@actions/core');
-const { GitHub, context } = require("@actions/github");
-const axios = require('axios');
-const tests = require("./__tests__/ft-1.json");
-
-const run = async () => {
-    try {
-        const repo = context.repo.repo;
-        const owner = context.repo.owner;
-
-        const data = JSON.parse(tests);
-        const {
-          numTotalTestSuites, 
-          numPassedTestSuites, 
-          numTotalTests, 
-          numPassedTests, 
-          numPendingTests
-        } = data;
-
-        const report = {
-          repo, owner,
-          'feature-1': true,
-          numTotalTestSuites, 
-          numPassedTestSuites, 
-          numTotalTests, 
-          numPassedTests, 
-          numPendingTests
-        };
-        console.log(report);
-
-        const resp = await axios.post('https://reqres.in/api/users', report);
-        console.log(resp);
-        
-      } catch (error) {
-        core.setFailed(error.message);
-      }
-};
-
-run();
+name: 'Report Feature 1'
+description: 'report test stats for feature 1 audits'
+runs:
+  using: 'node12'
+  main: 'index.js'
