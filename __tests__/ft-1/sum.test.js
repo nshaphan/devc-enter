@@ -1,15 +1,21 @@
 const sum = require('../../src/sum');
 
 describe('does basic addition', () => {
-  test("adds 1 + 2 to produce 3", () => {
-    expect(sum(1, 2)).toBe(3);
+  test("correctly adds 2 +ve numbers", () => {
+    expect(sum(2, 3)).toBe(5);
+    expect(sum(5, 4)).toBe(9);
+    expect(sum(10, 5)).toBe(15);
   });
 
-  test("adds 5 + 2 to produce 7", () => {
-    expect(sum(5, 2)).toBe(7);
+  test("correctly adds 2 -ve numbers", () => {
+    expect(sum(-2, -3)).toBe(-5);
+    expect(sum(-5, -4)).toBe(-9);
+    expect(sum(-10, -5)).toBe(-15);
   });
 
-  test("adds 10 + -2 to produce 8", () => {
-    expect(sum(10, -2)).toBe(8);
+  test("correctly adds +ve & -ve numbers", () => {
+    expect(sum(2, -3)).toBe(-1);
+    expect(sum(-5, 8)).toBe(3);
+    expect(sum(-10, 5)).toBe(-5);
   });
 })

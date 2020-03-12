@@ -27,7 +27,6 @@ const run = async () => {
         };
 
         const {data} = await axios.post('https://reqres.in/api/users', report);
-        console.log(data);
         
       } catch (error) {
         core.setFailed(error.message);

@@ -5,8 +5,8 @@
   "repository": "git@github.com:chalu/devc-enter.git",
   "license": "MIT",
   "scripts": {
-    "ft-1": "jest __tests__/ft-1 --json --outputFile=__tests__/ft-1.json",
-    "ft-2": "jest __tests__/ft-2 --json --outputFile=__tests__/ft-2.json",
-    "ft-3": "jest __tests__/ft-3 --json --outputFile=__tests__/ft-3.json"
+    "ft-1": "jest __tests__/ft-1",
+    "ft-2": "jest __tests__/ft-2",
+    "ft-3": "jest __tests__/ft-3"
   }
 }
