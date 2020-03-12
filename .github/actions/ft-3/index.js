@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const { GitHub, context } = require("@actions/github");
 const axios = require('axios');
-const stats = require("../../../__tests__/ft-1.json");
+const stats = require("../../../__tests__/ft-3.json");
 
 const run = async () => {
     try {        
@@ -23,11 +23,10 @@ const run = async () => {
           numTotalTests, 
           numPassedTests, 
           numPendingTests,
-          'isFeatureOne': true
+          'isFeatureThree': true
         };
 
         const {data} = await axios.post('https://reqres.in/api/users', report);
-        console.log(data);
         
       } catch (error) {
         core.setFailed(error.message);
