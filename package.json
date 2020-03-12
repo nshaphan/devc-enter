@@ -5,8 +5,16 @@
   "repository": "git@github.com:chalu/devc-enter.git",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint ./src/",
     "ft-1": "jest __tests__/ft-1",
     "ft-2": "jest __tests__/ft-2",
     "ft-3": "jest __tests__/ft-3"
+  },
+  "devDependencies": {
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "^25.1.0"
   }
 }
