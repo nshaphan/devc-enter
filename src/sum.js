@@ -1,4 +1,4 @@
-function sum() {
-  
-}
-module.exports = sum;
+const sum = () => {
+};
+
+export default sum;

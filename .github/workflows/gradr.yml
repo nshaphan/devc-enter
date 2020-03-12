@@ -6,7 +6,31 @@ on:
     - master
 
 jobs:
+  lint: 
+    name: audit code-style
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+
+    - name: Prepare To Install
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install Deps
+      run: yarn install
+        
+    - name: Run Audits
+      run: yarn lint
+
   ft-1:
+    needs: lint
     name: audit feature 1
     runs-on: ubuntu-latest
 
@@ -36,6 +60,7 @@ jobs:
       if: success()
   
   ft-2:
+    needs: lint
     name: audit feature 2
     runs-on: ubuntu-latest
 
@@ -65,6 +90,7 @@ jobs:
       if: success()
 
   ft-3:
+    needs: lint
     name: audit feature 3
     runs-on: ubuntu-latest
 

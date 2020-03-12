@@ -1,16 +1,1 @@
-const sum = require('../../src/sum');
-
-describe('adds more than 2 numbers', () => {
-  test("correctly adds more than 2 +ve numbers", () => {
-    expect(sum(5, 2, 3)).toBe(10);
-  });
-
-  test("correctly adds more than 2 -ve numbers", () => {
-    expect(sum(-15, -7, -3)).toBe(-25);
-  });
-
-  test("correctly adds more than 2 +ve & -ve numbers", () => {
-    expect(sum(-15, 7, 3)).toBe(-5);
-    expect(sum(10, -5, 2, -11, 10)).toBe(6);
-  });
-});
+parcelRequire=function(e){var r="function"==typeof parcelRequire&&parcelRequire,n="function"==typeof require&&require,i={};function u(e,u){if(e in i)return i[e];var t="function"==typeof parcelRequire&&parcelRequire;if(!u&&t)return t(e,!0);if(r)return r(e,!0);if(n&&"string"==typeof e)return n(e);var o=new Error("Cannot find module '"+e+"'");throw o.code="MODULE_NOT_FOUND",o}return u.register=function(e,r){i[e]=r},i=e(u),u.modules=i,u}(function (require) {var b={},a=function(r,n){for(var t=arguments.length,e=new Array(t>2?t-2:0),u=2;u<t;u++)e[u-2]=arguments[u];return[r,n].concat(e).map(function(r){return parseInt(r,10)}).filter(function(r){return!Number.isNaN(r)}).reduce(function(r,n){return r+n},0)};b.default=a;describe("adds more than 2 numbers",function(){test("correctly adds more than 2 +ve numbers",function(){expect(a(5,2,3)).toBe(10)}),test("correctly adds more than 2 -ve numbers",function(){expect(a(-15,-7,-3)).toBe(-25)}),test("correctly adds more than 2 +ve & -ve numbers",function(){expect(a(-15,7,3)).toBe(-5),expect(a(10,-5,2,-11,10)).toBe(6)})});b.__esModule=true;return{"AOPM":{},"nNE2":b};});
