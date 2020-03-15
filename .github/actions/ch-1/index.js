@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const { GitHub, context } = require("@actions/github");
 const axios = require('axios');
-const stats = require("../../../__tests__/ft-1.json");
+const stats = require("../../../audits/ch-1.json");
 
 const run = async () => {
     try {        
@@ -18,18 +18,21 @@ const run = async () => {
 
         const report = {
           repo, owner,
-          numTotalTestSuites, 
-          numPassedTestSuites, 
+          type: 'challenge-1',
           numTotalTests, 
           numPassedTests, 
           numPendingTests,
-          'isFeatureOne': true
+          numTotalTestSuites, 
+          numPassedTestSuites
         };
 
-        const {data} = await axios.post('https://reqres.in/api/users', report);
-        
+        const apiBase = core.getInput('api-base');
+        const { result } = await axios.post(`${apiBase}/entry-tests`, {report});
+        console.log(result); 
+
       } catch (error) {
         core.setFailed(error.message);
+        //TODO possible to post a comment on the PR at this point?
       }
 };
 
