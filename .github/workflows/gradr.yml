@@ -57,7 +57,7 @@ jobs:
     - name: Prepare Audits
       uses: actions/checkout@v2
       with: 
-        repository: chalu/js-audits@v1.0
+        repository: chalu/js-audits@v1
         path: audits
 
     - name: Run Audits
