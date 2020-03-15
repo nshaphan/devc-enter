@@ -52,7 +52,7 @@ jobs:
     - name: Install Deps
       run: |
         yarn install
-        yarn add jest babel-jest axios @actions/core @actions/github
+        yarn add jest @babel/core @babel/preset-env babel-jest axios @actions/core @actions/github
 
     - name: Prepare Audits
       uses: actions/checkout@v2
