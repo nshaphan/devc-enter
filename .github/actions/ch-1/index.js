@@ -1,10 +1,10 @@
 const core = require('@actions/core');
 const { context } = require("@actions/github");
 const axios = require('axios');
-const stats = require("../../../audits/ch-1.json");
+const stats = require('../../../audits/ch-1.json');
 
 const run = async () => {
-    try {        
+    try {     
         const repo = context.repo.repo;
         const owner = context.repo.owner;
         
