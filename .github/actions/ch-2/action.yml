@@ -1,5 +1,5 @@
-name: 'Report Feature 2'
-description: 'report test stats for feature 2 audits'
+name: 'Report Challenge 2'
+description: 'report test stats for challenge 2 audits'
 inputs:
   api-base:  
     description: 'base API endpoint URL'

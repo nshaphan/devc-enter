@@ -65,6 +65,7 @@ jobs:
 
     - name: Report Audit Stats
       uses: ./.github/actions/ch-1
+      if: always()
   
   ch-2:
     needs: ch-1
@@ -100,6 +101,7 @@ jobs:
 
     - name: Report Audit Stats
       uses: ./.github/actions/ch-2
+      if: always()
 
   ch-3:
     needs: ch-2
@@ -135,3 +137,4 @@ jobs:
 
     - name: Report Audit Stats
       uses: ./.github/actions/ch-3
+      if: always()
